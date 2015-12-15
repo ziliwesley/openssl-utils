@@ -13,7 +13,12 @@ import { isString } from 'lodash';
  *                                          generate in bits
  * @return {Promise}
  */
-export default function({ password = false, out = 'untitled.key',  numbits = 2048} = {}) {
+export default function({
+    password = false,
+    out = 'untitled.key',
+    numbits = 2048
+} = {}) {
+
     let shouldEncrypt = isString(password);
     let opts = {};
 

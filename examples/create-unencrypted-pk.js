@@ -4,7 +4,7 @@ const opensslUtils = require('../index.js');
 
 // Create an unencrypted private key
 opensslUtils.createPrivateKey({
-        out: 'unencrypted-private.key'
+        out: './cert/unencrypted-private.key'
     })
     .then(function (res) {
         console.log(res);
