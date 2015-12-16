@@ -178,5 +178,19 @@ describe('Sign Certificate Request', () => {
                             '-out', 'untitled.crt', '-days', 900]]);
                 });
         });
+
+        pit('Pass in <extfile>', () => {
+            return signCertificate({
+                    extfile: 'any.cnf'
+                })
+                .then(() => {
+                    verifyOpenSSLArgs(spawn, [
+                        'openssl',
+                        ['x509', '-req', '-sha256', '-in', 'untitled.csr',
+                            '-CA', 'ca.crt', '-CAkey', 'ca.key', '-CAcreateserial',
+                            '-out', 'untitled.crt', '-days', 365,
+                            '-extfile', 'any.cnf']]);
+                });
+        });
     });
 });

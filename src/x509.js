@@ -65,9 +65,11 @@ export default function signCertificate({
     CAkey = 'ca.key',
     req = 'untitled.csr',
     out = 'untitled.crt',
-    days = 365
+    days = 365,
+    extfile = false
 } = {}) {
     let wasEncrypted = isString(password);
+    let hasExtraFile = isString(extfile);
     let opts = {
         // `-req`
         req: true,
@@ -91,6 +93,11 @@ export default function signCertificate({
     if (wasEncrypted) {
         // `-passin=pass:<secret>`
         opts.passin = `pass:${password}`;
+    }
+
+    // Supply an extra file for configuration
+    if (hasExtraFile) {
+        opts.extfile = extfile;
     }
 
     return openssl.qExec('x509', opts);

@@ -1,0 +1,7 @@
+subjectAltName=@alt_names
+
+[alt_names]
+DNS.1=*.yourdomain.com
+DNS.2=*.anotherdomain.com
+IP.1=123.123.123.123
+IP.2=127.0.0.1

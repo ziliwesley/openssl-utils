@@ -8,6 +8,7 @@ let csrPath = './cert/server.csr';
 let crtPath = './cert/server.crt';
 let CAKeyPath = './cert/ca.key';
 let CACertPath = './cert/ca.crt';
+let extfilePath = './examples/extra.cnf';
 
 // Create an unencrypted private key
 opensslUtils.createPrivateKey({
@@ -32,10 +33,11 @@ opensslUtils.createPrivateKey({
         return opensslUtils.signCertificate({
             password: CAsecret,
             req: csrPath,
-            CACert: CACertPath,
+            CAcert: CACertPath,
             CAkey: CAKeyPath,
             out: crtPath,
-            days: 730
+            days: 730,
+            extfile: extfilePath
         });
     })
     .catch(function (err) {
