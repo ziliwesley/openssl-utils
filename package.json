@@ -30,8 +30,7 @@
     "url": "ziliwesley/openssl-utils"
   },
   "author": "ziliwesley",
-  "license": "UNLICENSED",
-  "private": true,
+  "license": "MIT",
   "engines": {
     "nodes": ">= 4.0.0"
   },
