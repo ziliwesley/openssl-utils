@@ -1,6 +1,6 @@
 {
   "name": "openssl-utils",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Provide basic utility function to create certificates",
   "main": "index.js",
   "pre-commit": [
