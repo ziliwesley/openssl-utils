@@ -1,3 +1,13 @@
+<a name="0.2.1"></a>
+## 0.2.1 (2015-12-16)
+
+
+### Update
+
+* Add option to edit alt_names by `extfile` ([133efa58673de42ac7d2e12a0806349a937b8d7b](https://github.com/ziliwesley/openssl-utils/commit/133efa58673de42ac7d2e12a0806349a937b8d7b))
+
+
+
 <a name="0.2.0"></a>
 # 0.2.0 (2015-12-16)
 
