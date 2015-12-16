@@ -5,6 +5,7 @@ const opensslUtils = require('../index.js');
 let secret = '20151221';
 let keyPath = './cert/ca.key';
 let csrPath = './cert/ca.csr';
+let crtPath = './cert/ca.crt';
 
 // Create an unencrypted private key
 opensslUtils.createPrivateKey({
@@ -13,7 +14,7 @@ opensslUtils.createPrivateKey({
         numbits: 4096
     })
     .then(function () {
-        return opensslUtils.createRequest({
+        return opensslUtils.generateCertificateReq({
             key: keyPath,
             out: csrPath,
             password: secret,
@@ -25,6 +26,15 @@ opensslUtils.createPrivateKey({
                 OU: 'Top Secret',
                 CN: 'Anonymous'
             }
+        });
+    })
+    .then(function () {
+        return opensslUtils.selfSign({
+            key: keyPath,
+            req: csrPath,
+            out: crtPath,
+            password: secret,
+            days: 730
         });
     })
     .catch(function (err) {
