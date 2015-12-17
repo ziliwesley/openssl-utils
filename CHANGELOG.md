@@ -1,3 +1,13 @@
+<a name="0.2.2"></a>
+## 0.2.2 (2015-12-17)
+
+
+### New
+
+* Add convetToPK12 ([501be59b04ac7cb1913f50633d29f76a392a9a62](https://github.com/ziliwesley/openssl-utils/commit/501be59b04ac7cb1913f50633d29f76a392a9a62))
+
+
+
 <a name="0.2.1"></a>
 ## 0.2.1 (2015-12-16)
 
