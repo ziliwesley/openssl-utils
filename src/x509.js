@@ -100,5 +100,14 @@ export default function signCertificate({
         opts.extfile = extfile;
     }
 
-    return openssl.qExec('x509', opts);
+    return openssl.qExec('x509', opts)
+        .then(function (buffer) {
+            return buffer;
+        }, function (err) {
+            if (err.match(/^Signature ok/)) {
+                return Promise.resolve(err);
+            } else {
+                return Promise.reject(err);
+            }
+        });
 }
